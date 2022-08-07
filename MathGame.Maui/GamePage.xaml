@@ -5,7 +5,29 @@
     <VerticalStackLayout
         Padding="200" >
         <Label 
-            Text="{Binding GameType}"
+            x:Name="QuestionLabel"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <Entry
+            x:Name="Answer"
+            HorizontalOptions="Center" >
+        </Entry>
+
+        <Button 
+            x:Name="SubmitAnswer"
+            Text="Answer"
+            Clicked="OnAnswerSubmitted"
+            HorizontalOptions="Center" />
+
+        <Label 
+            x:Name="AnswerLabel"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+
+        <Label 
+            x:Name="GameOverLabel"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
     </VerticalStackLayout>
