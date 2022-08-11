@@ -4,35 +4,46 @@
              x:Class="MathGame.Maui.GamePage"
              >
     <VerticalStackLayout
-        Padding="200"
-        Spacing="25" >
-        <Label 
+        Padding="100"
+        Spacing="25">
+        <VerticalStackLayout
+            x:Name="QuestionsArea"
+             Spacing="25">
+            <Label 
             x:Name="QuestionLabel"
             VerticalOptions="Center" 
             HorizontalOptions="Center"
             FontSize="32"/>
 
-        <Entry
-            x:Name="Answer"
+            <Entry
+            x:Name="AnswerEntry"
             HorizontalOptions="Center" >
-        </Entry>
+            </Entry>
 
-        <Button 
-            x:Name="SubmitAnswer"
+            <Button 
+            x:Name="SubmitAnswerBtn"
             Text="Answer"
             Clicked="OnAnswerSubmitted"
             HorizontalOptions="Center" />
 
-        <Label 
+            <Label 
             x:Name="AnswerLabel"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
+        </VerticalStackLayout>
 
         <Label 
             x:Name="GameOverLabel"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
-        
-        
+
+        <Button 
+            IsVisible="false"
+            x:Name="BackToMenuBtn"
+            Text="Back to Menu"
+            Clicked="OnBackToMenu"
+            HorizontalOptions="Center" />
+
+
     </VerticalStackLayout>
 </ContentPage>

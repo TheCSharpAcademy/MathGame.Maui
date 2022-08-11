@@ -49,7 +49,7 @@ public partial class GamePage : ContentPage
 
     private void OnAnswerSubmitted(object sender, EventArgs e)
     {
-        var answer = Int32.Parse(Answer.Text);
+        var answer = Int32.Parse(AnswerEntry.Text);
         var isCorrect = false;
 
         switch (GameType)
@@ -59,20 +59,22 @@ public partial class GamePage : ContentPage
                 ProcessAnswer(isCorrect);
                 break;
             case "Subtraction":
-                isCorrect = answer == firstNumber + secondNumber;
+                isCorrect = answer == firstNumber - secondNumber;
                 ProcessAnswer(isCorrect);
                 break;
             case "Multiplication":
-                isCorrect = answer == firstNumber + secondNumber;
+                isCorrect = answer == firstNumber * secondNumber;
                 ProcessAnswer(isCorrect);
                 break;
             case "Division":
-                isCorrect = answer == firstNumber + secondNumber;
+                isCorrect = answer == firstNumber / secondNumber;
                 ProcessAnswer(isCorrect);
                 break;
         };
 
         gamesLeft--;
+        AnswerEntry.Text = "";
+        
 
         if (gamesLeft > 0)
             CreateNewQuestion();
@@ -88,6 +90,16 @@ public partial class GamePage : ContentPage
 
     private void GameOver()
     {
+        QuestionsArea.IsVisible = false;
+        BackToMenuBtn.IsVisible = true;
         GameOverLabel.Text = $"Game over! Your got {score} out of {totalQuestions} right";
+    }
+
+    private void OnBackToMenu(object sender, EventArgs e)
+    {
+        score = 0;
+        gamesLeft = totalQuestions;
+
+        Navigation.PushAsync(new MainPage());
     }
 }
