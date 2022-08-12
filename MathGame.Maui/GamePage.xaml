@@ -29,13 +29,15 @@
             <Label 
             x:Name="AnswerLabel"
             VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+            HorizontalOptions="Center"
+            FontSize="32"/>
         </VerticalStackLayout>
 
         <Label 
             x:Name="GameOverLabel"
             VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+            HorizontalOptions="Center"
+            FontSize="32"/>
 
         <Button 
             IsVisible="false"
