@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MathGame.Maui.GamePage"
+             BackgroundImageSource="bg.jpg"
              >
     <VerticalStackLayout
         Padding="100"
@@ -13,7 +14,9 @@
             x:Name="QuestionLabel"
             VerticalOptions="Center" 
             HorizontalOptions="Center"
-            FontSize="32"/>
+            TextColor="White"
+            FontFamily="RobotoBold"
+            FontSize="50"/>
 
             <Entry
             x:Name="AnswerEntry"
@@ -24,18 +27,21 @@
             x:Name="SubmitAnswerBtn"
             Text="Answer"
             Clicked="OnAnswerSubmitted"
+            FontFamily="RobotoBold"
             HorizontalOptions="Center" />
 
             <Label 
             x:Name="AnswerLabel"
             VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+            HorizontalOptions="Center"
+            TextColor="White"/>
         </VerticalStackLayout>
 
         <Label 
             x:Name="GameOverLabel"
             VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+            HorizontalOptions="Center"
+            TextColor="White"/>
 
         <Button 
             IsVisible="false"
