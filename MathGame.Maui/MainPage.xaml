@@ -15,13 +15,11 @@
                 Text= "THIS IS YOUR MATHS GAME!"
                 FontSize="50"
                 TextColor="White"
-                FontFamily="CaveatBrush"
                 HorizontalOptions="Center"/>
             <Label
                 Text= "WHAT GAME WOULD YOU LIKE TO PLAY?"
                 FontSize="50"
                 TextColor="White"
-                FontFamily="CaveatBrush"
                 HorizontalOptions="Center"/>
 
             <Grid>
@@ -38,25 +36,25 @@
                 </Grid.ColumnDefinitions>
 
                 <Button Grid.Column="0"
-                        MaximumWidthRequest="100"
+                        MinimumWidthRequest="100"
                         Text="+"
                         Clicked="OnGameChosen"
                         FontSize="50"
                         FontFamily="CaveatBrush"/>
                 <Button Grid.Column ="1"
-                        MaximumWidthRequest="100"
+                        MinimumWidthRequest="100"
                         Text="−"
                         Clicked="OnGameChosen"
                         FontSize="50"
                         FontFamily="CaveatBrush"/>
                 <Button Grid.Column ="2"
-                        MaximumWidthRequest="100"
+                        MinimumWidthRequest="100"
                         Text="×"
                         Clicked="OnGameChosen"
                         FontSize="50"
                         FontFamily="CaveatBrush"/>
                 <Button Grid.Column ="3"
-                        MaximumWidthRequest="100"
+                        MinimumWidthRequest="100"
                         Text="÷"
                         Clicked="OnGameChosen"
                         FontSize="50"
@@ -66,7 +64,7 @@
                         BackgroundColor="DarkGreen"
                         Text="VIEW PREVIOUS GAMES"
                         Clicked="OnViewPreviousGamesChosen"
-                        MaximumWidthRequest="500"
+                        MinimumWidthRequest="500"
                         MaximumHeightRequest="70"
                         FontSize="32"
                         FontFamily="CaveatBrush"/>
