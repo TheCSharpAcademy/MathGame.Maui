@@ -15,40 +15,55 @@
             VerticalOptions="Center" 
             HorizontalOptions="Center"
             TextColor="White"
-            FontFamily="RobotoBold"
-            FontSize="50"/>
+            FontFamily="CaveatBrush"
+            FontSize="80"/>
+
+
 
             <Entry
             x:Name="AnswerEntry"
-            HorizontalOptions="Center" >
+            HorizontalOptions="Center"
+            BackgroundColor="White"
+            TextColor="Black"
+            FontFamily="CaveatBrush"
+            FontSize="50"
+            MinimumWidthRequest="100"
+                >
             </Entry>
 
             <Button 
             x:Name="SubmitAnswerBtn"
             Text="Answer"
             Clicked="OnAnswerSubmitted"
-            FontFamily="RobotoBold"
-            HorizontalOptions="Center" />
+            FontFamily="CaveatBrush"
+            HorizontalOptions="Center"
+            FontSize="30"/>
 
             <Label 
             x:Name="AnswerLabel"
             VerticalOptions="Center" 
             HorizontalOptions="Center"
-            TextColor="White"/>
+            FontFamily="CaveatBrush"
+            TextColor="White"
+            FontSize="50"/>
         </VerticalStackLayout>
 
         <Label 
             x:Name="GameOverLabel"
             VerticalOptions="Center" 
             HorizontalOptions="Center"
-            TextColor="White"/>
+            FontFamily="CaveatBrush"
+            TextColor="White"
+            FontSize="50"/>
 
         <Button 
             IsVisible="false"
             x:Name="BackToMenuBtn"
             Text="Back to Menu"
             Clicked="OnBackToMenu"
-            HorizontalOptions="Center" />
+            FontFamily="CaveatBrush"
+            HorizontalOptions="Center"
+            FontSize="50"/>
 
 
     </VerticalStackLayout>

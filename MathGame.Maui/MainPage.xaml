@@ -12,16 +12,16 @@
             <Image Source="Resources/Images/bg.jpg"
                    Aspect="AspectFit" />
             <Label
-                Text= "This is your maths game!"
-                FontSize="32"
+                Text= "THIS IS YOUR MATHS GAME!"
+                FontSize="50"
                 TextColor="White"
-                FontFamily="RobotoBold"
+                FontFamily="CaveatBrush"
                 HorizontalOptions="Center"/>
             <Label
-                Text= "What game would you like to play?"
-                FontSize="32"
+                Text= "WHAT GAME WOULD YOU LIKE TO PLAY?"
+                FontSize="50"
                 TextColor="White"
-                FontFamily="RobotoBold"
+                FontFamily="CaveatBrush"
                 HorizontalOptions="Center"/>
 
             <Grid>
@@ -42,34 +42,34 @@
                         Text="+"
                         Clicked="OnGameChosen"
                         FontSize="50"
-                        FontFamily="RobotoBold"/>
+                        FontFamily="CaveatBrush"/>
                 <Button Grid.Column ="1"
                         MaximumWidthRequest="100"
                         Text="−"
                         Clicked="OnGameChosen"
                         FontSize="50"
-                        FontFamily="RobotoBold"/>
+                        FontFamily="CaveatBrush"/>
                 <Button Grid.Column ="2"
                         MaximumWidthRequest="100"
                         Text="×"
                         Clicked="OnGameChosen"
                         FontSize="50"
-                        FontFamily="RobotoBold"/>
+                        FontFamily="CaveatBrush"/>
                 <Button Grid.Column ="3"
                         MaximumWidthRequest="100"
                         Text="÷"
                         Clicked="OnGameChosen"
                         FontSize="50"
-                        FontFamily="RobotoBold"/>
+                        FontFamily="CaveatBrush"/>
                 <Button Grid.Row ="1"
                         Grid.ColumnSpan="4"
                         BackgroundColor="DarkGreen"
-                        Text="View Previous Games"
+                        Text="VIEW PREVIOUS GAMES"
                         Clicked="OnViewPreviousGamesChosen"
                         MaximumWidthRequest="500"
                         MaximumHeightRequest="70"
                         FontSize="32"
-                        FontFamily="RobotoBold"/>
+                        FontFamily="CaveatBrush"/>
             </Grid>
         </VerticalStackLayout>
     </ContentView>
