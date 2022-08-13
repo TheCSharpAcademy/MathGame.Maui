@@ -1,7 +1,11 @@
+using MathGame.Maui.Data;
+using MathsGame.Models;
+
 namespace MathGame.Maui;
 
 public partial class GamePage : ContentPage
 {
+  
     public string GameType { get; set; }
     int firstNumber = 0;
     int secondNumber = 0;
@@ -90,9 +94,24 @@ public partial class GamePage : ContentPage
 
     private void GameOver()
     {
+        GameOperation gameOperation = GameType switch
+        {
+            "Addition" => GameOperation.Addition,
+            "Subtraction" => GameOperation.Subtraction,
+            "Multiplication" => GameOperation.Multiplication,
+            "Division" => GameOperation.Division,
+        };
+
         QuestionsArea.IsVisible = false;
         BackToMenuBtn.IsVisible = true;
         GameOverLabel.Text = $"Game over! Your got {score} out of {totalQuestions} right";
+
+        App.GameRepository.Add(new Game
+        {
+            DatePlayed = DateTime.Now,
+            Type = gameOperation,
+            Score = score
+        });
     }
 
     private void OnBackToMenu(object sender, EventArgs e)

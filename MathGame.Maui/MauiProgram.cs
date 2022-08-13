@@ -1,4 +1,6 @@
-﻿namespace MathGame.Maui;
+﻿using MathGame.Maui.Data;
+
+namespace MathGame.Maui;
 
 public static class MauiProgram
 {
@@ -13,6 +15,10 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			});
 
-		return builder.Build();
+        string dbPath = Path.Combine(FileSystem.AppDataDirectory, "game.db");
+
+        builder.Services.AddSingleton<GameRepository>(s => ActivatorUtilities.CreateInstance<GameRepository>(s, dbPath));
+
+        return builder.Build();
 	}
 }

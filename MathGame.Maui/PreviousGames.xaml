@@ -8,5 +8,22 @@
             Text="Previous Games"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
+
+        <CollectionView x:Name="peopleList" Grid.Row="4">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="2*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Label Text="{Binding Id}" />
+                        <Label Grid.Column="1" Text="{Binding Score}" />
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        
     </VerticalStackLayout>
 </ContentPage>
