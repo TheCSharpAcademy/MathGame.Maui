@@ -11,6 +11,6 @@ public partial class PreviousGames : ContentPage
 		App.GameRepository.GetAllGames();
 
         List<Game> people = App.GameRepository.GetAllGames();
-        peopleList.ItemsSource = people;
+        gamesList.ItemsSource = people;
     }
 }

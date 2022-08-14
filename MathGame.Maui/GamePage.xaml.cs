@@ -5,7 +5,6 @@ namespace MathGame.Maui;
 
 public partial class GamePage : ContentPage
 {
-  
     public string GameType { get; set; }
     int firstNumber = 0;
     int secondNumber = 0;
@@ -48,17 +47,16 @@ public partial class GamePage : ContentPage
         }
 
         QuestionLabel.Text = $"{firstNumber} {gameOperand} {secondNumber}";
-
     }
 
     private void OnAnswerSubmitted(object sender, EventArgs e)
     {
         var answer = Int32.Parse(AnswerEntry.Text);
-        var isCorrect = false;
+        bool isCorrect;
 
         switch (GameType)
         {
-            case "Addition" :
+            case "Addition":
                 isCorrect = answer == firstNumber + secondNumber;
                 ProcessAnswer(isCorrect);
                 break;
@@ -78,7 +76,6 @@ public partial class GamePage : ContentPage
 
         gamesLeft--;
         AnswerEntry.Text = "";
-        
 
         if (gamesLeft > 0)
             CreateNewQuestion();
@@ -88,7 +85,7 @@ public partial class GamePage : ContentPage
 
     private void ProcessAnswer(bool isCorrect)
     {
-        score = isCorrect ? score += 1 : score;  
+        score = isCorrect ? score += 1 : score;
         AnswerLabel.Text = isCorrect ? "Correct!" : "Incorrect";
     }
 
@@ -105,6 +102,7 @@ public partial class GamePage : ContentPage
         QuestionsArea.IsVisible = false;
         BackToMenuBtn.IsVisible = true;
         GameOverLabel.Text = $"Game over! Your got {score} out of {totalQuestions} right";
+
 
         App.GameRepository.Add(new Game
         {
