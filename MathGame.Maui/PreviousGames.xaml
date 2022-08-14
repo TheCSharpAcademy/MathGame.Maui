@@ -3,7 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MathGame.Maui.PreviousGames"
              >
-    <VerticalStackLayout>
+    <VerticalStackLayout
+        HorizontalOptions="Center"
+        Padding="50">
         <Label 
             Text="Previous Games"
             VerticalOptions="Center" 
@@ -16,10 +18,12 @@
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="2*" />
+                            <ColumnDefinition Width="2*" />
                         </Grid.ColumnDefinitions>
 
-                        <Label Text="{Binding Id}" />
-                        <Label Grid.Column="1" Text="{Binding Score}" />
+                        <Label Grid.Column="0" Text="{Binding DatePlayed, StringFormat={{dd-MMMM-yy}}}" />
+                        <Label Grid.Column="1" Text="{Binding Type}" />
+                        <Label Grid.Column="2" Text="{Binding Score}" />
                     </Grid>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
