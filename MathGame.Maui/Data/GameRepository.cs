@@ -47,5 +47,11 @@ namespace MathGame.Maui.Data
 
             return new List<Game>();
         }
+
+        internal void Delete(int id)
+        {
+            conn = new SQLiteConnection(_dbPath);
+            conn.Delete(new Game { Id = id });
+        }
     }
 }
