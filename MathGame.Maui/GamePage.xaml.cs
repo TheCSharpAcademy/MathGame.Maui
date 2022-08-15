@@ -1,3 +1,5 @@
+using MathGame.Maui.Models;
+
 namespace MathGame.Maui;
 
 public partial class GamePage : ContentPage
@@ -20,15 +22,6 @@ public partial class GamePage : ContentPage
 
     private void CreateNewQuestion()
     {
-        var gameOperand = GameType switch
-        {
-            "Addition" => "+",
-            "Subtraction" => "-",
-            "Multiplication" => "*",
-            "Division" => "/",
-            _ => ""
-        };
-
         var random = new Random();
 
         firstNumber = GameType != "Division" ? random.Next(1, 9) : random.Next(1, 99);
@@ -43,7 +36,7 @@ public partial class GamePage : ContentPage
             }
         }
 
-        QuestionLabel.Text = $"{firstNumber} {gameOperand} {secondNumber}";
+        QuestionLabel.Text = $"{firstNumber} {GameType} {secondNumber}";
 
     }
 
@@ -54,19 +47,19 @@ public partial class GamePage : ContentPage
 
         switch (GameType)
         {
-            case "Addition" :
+            case "+" :
                 isCorrect = answer == firstNumber + secondNumber;
                 ProcessAnswer(isCorrect);
                 break;
-            case "Subtraction":
+            case "-":
                 isCorrect = answer == firstNumber - secondNumber;
                 ProcessAnswer(isCorrect);
                 break;
-            case "Multiplication":
+            case "×":
                 isCorrect = answer == firstNumber * secondNumber;
                 ProcessAnswer(isCorrect);
                 break;
-            case "Division":
+            case "÷":
                 isCorrect = answer == firstNumber / secondNumber;
                 ProcessAnswer(isCorrect);
                 break;
@@ -90,9 +83,24 @@ public partial class GamePage : ContentPage
 
     private void GameOver()
     {
+        GameOperation gameOperation = GameType switch
+        {
+            "+" => GameOperation.Addition,
+            "-" => GameOperation.Subtraction,
+            "×" => GameOperation.Multiplication,
+            "÷" => GameOperation.Division,
+        };
+
         QuestionsArea.IsVisible = false;
         BackToMenuBtn.IsVisible = true;
         GameOverLabel.Text = $"Game over! Your got {score} out of {totalQuestions} right";
+
+        App.GameRepository.Add(new Game
+        {
+            DatePlayed = DateTime.Now,
+            Type = gameOperation,
+            Score = score
+        });
     }
 
     private void OnBackToMenu(object sender, EventArgs e)

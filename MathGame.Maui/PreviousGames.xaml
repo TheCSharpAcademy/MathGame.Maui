@@ -2,11 +2,38 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MathGame.Maui.PreviousGames"
+             BackgroundImageSource="bg.jpg"
              >
-    <VerticalStackLayout>
-        <Label 
-            Text="Previous Games"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="50,100,50,50">
+            <Grid ColumnDefinitions="*,*,*,*"
+                  RowDefinitions="50">
+                <Label Grid.Column="0" Text="Date" FontSize="32"/>
+                <Label Grid.Column="1" Text="Type" FontSize="32"/>
+                <Label Grid.Column="2" Text="Score" FontSize="32"/>
+            </Grid>
+            <CollectionView x:Name="gamesList">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid ColumnDefinitions="*,*,*,*"
+                              RowDefinitions="50">
+                           
+                            <Label Grid.Column="0" Text="{Binding DatePlayed, StringFormat='{0:d}'}" FontSize="32"/>
+                            <Label Grid.Column="1" Text="{Binding Type}" FontSize="32"/>
+                            <Label Grid.Column="2" Text="{Binding Score}" FontSize="32"/>
+                            <ImageButton 
+                                Source="trash.png" 
+                                Grid.Column="3" 
+                                Clicked="OnDelete" 
+                                BindingContext="{Binding Id}"  
+                                MinimumHeightRequest="40"
+                                MaximumWidthRequest="70"
+                               />
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>
