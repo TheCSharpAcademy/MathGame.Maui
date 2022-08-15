@@ -7,7 +7,7 @@ public partial class PreviousGames : ContentPage
     public PreviousGames()
     {
         InitializeComponent();
-        App.GameRepository.GetAllGames();
+        
         gamesList.ItemsSource = App.GameRepository.GetAllGames();
     }
 
